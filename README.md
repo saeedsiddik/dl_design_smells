@@ -1,2 +1,5 @@
-# dl_design_smells
+# Deep Learning Design Smells
+
 ECE720 Course Project 2022
+
+
