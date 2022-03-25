@@ -24,7 +24,6 @@ if __name__ == '__main__':
     ast = get_ast()
     call_groups = get_conv2d_calls_in_groups()
 
-    print(call_groups)
     for calls in call_groups:
         for i in range(len(calls)-1):
             if calls[i].first_argument_value > calls[i+1].first_argument_value:
