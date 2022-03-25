@@ -22,15 +22,10 @@ if __name__ == '__main__':
     method_name = "Conv2D"
 
     ast = get_ast()
-    calls = get_conv2d_calls_in_groups()
+    call_groups = get_conv2d_calls_in_groups()
 
-    print(calls)
-    # for dec in declarations:
-    #     fc = FindCall(method_name)
-    #     fc.visit(dec)
-    #
-    # pprint(fc.result)
-    #
-    # for index in range(len(fc.result[method_name])-1):
-    #     if fc.result[method_name][index][1] > fc.result[method_name][index+1][1]:
-    #         print(f"Non-expanding feature map found at line {fc.result[method_name][index+1][0]}!")
+    print(call_groups)
+    for calls in call_groups:
+        for i in range(len(calls)-1):
+            if calls[i].first_argument_value > calls[i+1].first_argument_value:
+                print(f"Non-expanding feature map found at line {calls[i+1].line_no}!")
