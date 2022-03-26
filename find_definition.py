@@ -1,5 +1,5 @@
 from _ast import FunctionDef, If, Compare, Eq, Name, Constant
-from ast import NodeVisitor, literal_eval
+from ast import NodeVisitor
 
 from find_call import FindConv2DCall
 

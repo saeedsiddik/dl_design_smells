@@ -2,7 +2,6 @@ import ast
 from pprint import pprint
 
 from find_definition import FindDefinition
-from find_call import FindConv2DCall
 
 
 def get_ast():
