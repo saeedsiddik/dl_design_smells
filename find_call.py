@@ -7,7 +7,9 @@ class FindConv2DCall(NodeVisitor):
     results = []
 
     def visit_Call(self, node):
-        if hasattr(node.func, "id") and (node.func.id == "Conv2D"):
+        func = node.func
+        if (hasattr(func, "id") and (func.id == "Conv2D")) or \
+                (hasattr(func, "attr") and func.attr == "Conv2D"):
             self.results.append(Conv2DCall(node))
             # self.result[node.func.id].append([node.lineno, node.args[0].value])
         # visit the children

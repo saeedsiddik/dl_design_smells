@@ -24,7 +24,8 @@ if __name__ == '__main__':
     ast = get_ast()
     call_groups = get_conv2d_calls_in_groups()
 
+    pprint(call_groups)
     for calls in call_groups:
         for i in range(len(calls)-1):
-            if calls[i].first_argument_value > calls[i+1].first_argument_value:
+            if calls[i].filters_value > calls[i + 1].filters_value:
                 print(f"Non-expanding feature map found at line {calls[i+1].line_no}!")
