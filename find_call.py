@@ -4,7 +4,8 @@ from conv2D_call import Conv2DCall
 
 
 class FindConv2DCall(NodeVisitor):
-    results = []
+    def __init__(self):
+        self.results = []
 
     def visit_Call(self, node):
         func = node.func

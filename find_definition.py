@@ -5,7 +5,8 @@ from find_call import FindConv2DCall
 
 
 class FindDefinition(NodeVisitor):
-    results = []
+    def __init__(self):
+        self.results = []
 
     def visit_FunctionDef(self, node: FunctionDef):
         conv2ds = FindConv2DCall().find(node)
