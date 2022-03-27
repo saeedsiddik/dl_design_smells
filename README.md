@@ -1,8 +1,8 @@
-# Deep Learning Design Smells
+# Deep Learning Design Smells Detection
 
-ECE720 Course Project 2022
+ECE720: Machine Learning Systems Engineering Course Project 2022
 
-## Non--expanding feature map
+## Non-expanding feature map
 ### Assumptions
 * Conv2D is called with constant filters like Conv2D(32, ...) or Conv2D(filters=32, ...)
 * All the calls of Conv2D in a scope/method are part of same model
