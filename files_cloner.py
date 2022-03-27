@@ -55,7 +55,7 @@ def save_files_of_page(codes, page_index, count):
 
 
 def clone_files():
-    query = "Conv2D keras in:file language:python"
+    query = "Conv2D keras in:file extension:py language:python"
     codes = g.search_code(query)
     print(f"Total {codes.totalCount} results found")
 
