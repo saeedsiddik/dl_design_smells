@@ -18,3 +18,11 @@ ECE720 Course Project 2022
 * Multiple calls of Conv2D where Conv2D is inside another method
 * Conv2D called with variable filters value
 
+### TODO
+* Run detector on all the code files
+* Select 10 files with the smell
+* Clone the full repository of the 10 files and run them
+* Read paper to set correct values of filters for the Conv2D calls
+* Refactor the 10 files and run the projects again
+* Evaluate the performance of the model
+
