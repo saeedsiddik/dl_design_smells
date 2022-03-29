@@ -10,7 +10,7 @@ from github.GithubException import RateLimitExceededException
 from github.GithubObject import GithubObject
 from github.PaginatedList import PaginatedList
 
-ACCESS_TOKEN = "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"
+ACCESS_TOKEN = "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" # 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
 PAGE_SIZE = 100
 g = Github(ACCESS_TOKEN, per_page=PAGE_SIZE)
 
