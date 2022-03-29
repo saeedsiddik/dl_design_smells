@@ -22,15 +22,9 @@ def get_conv2d_calls_in_groups(code_ast):
     return fd.results
 
 
-def detect_non_expanding_feature_map(file_path):
+def detect_non_expanding_feature_map(repo_name, file_name, file_path):
     code_ast = get_ast(file_path)
     call_groups = get_conv2d_calls_in_groups(code_ast)
-
-    file_name = path.split('\\')[1]
-    file_name_parts = file_name.split('$')
-
-    repo_name = "/".join([file_name_parts[0], file_name_parts[1]])
-    file_name = "\\".join(file_name_parts[2:])
 
     smelled_lines = list()
     for calls in call_groups:
@@ -52,8 +46,13 @@ if __name__ == '__main__':
         file = files[i]
         path = join(directory, file)
         print(f"[{i+1}] Processing file {path}")
+
+        file_name_parts = file.split('$')
+        repo_name = "/".join([file_name_parts[0], file_name_parts[1]])
+        file_name = "\\".join(file_name_parts[2:])
+
         try:
-            detected_lines = detect_non_expanding_feature_map(path)
+            detected_lines = detect_non_expanding_feature_map(repo_name, file_name, path)
             if len(detected_lines) > 0:
                 detection_count += 1
                 for line in detected_lines:
