@@ -2,3 +2,4 @@
 __pycache__/*
 .idea/*
 data/repo_files/*
+data/repositories_with_smells/*
