@@ -12,8 +12,10 @@ def scan_repo(repo_full_name):
         try:
             detected_lines = detect_non_expanding_feature_map(repo_full_name, file_name, file)
             if len(detected_lines) > 0:
+                with open(file) as py_file:
+                    lines = py_file.readlines()
                 for detected_line in detected_lines:
-                    print(f"Found non-expanding feature map in file {file_name} line {detected_line.smell_line_no}")
+                    print(f"Found non-expanding feature map in file {file_name} line {detected_line.smell_line_no}\n--> {lines[detected_line.smell_line_no-1]}")
         except Exception as e:
             continue
 
