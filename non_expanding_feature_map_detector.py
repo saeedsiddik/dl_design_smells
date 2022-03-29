@@ -5,7 +5,8 @@ from os.path import join
 from pprint import pprint
 
 from find_definition import FindDefinition
-from smelled_repo import SmelledRepo, SmellType
+from non_expanding_feature_map_smelled_file import NonExpandingFeatureMapSmelledFile
+from smelled_file import SmelledFile, SmellType
 
 
 def get_ast(file_path):
@@ -30,7 +31,7 @@ def detect_non_expanding_feature_map(repo_name, file_name, file_path):
     for calls in call_groups:
         for i in range(len(calls) - 1):
             if calls[i].filters_value > calls[i + 1].filters_value:
-                smelled_lines.append(SmelledRepo(repo_name, file_name, calls[i + 1].line_no, SmellType.NON_EXPANDING_FEATURE_MAP))
+                smelled_lines.append(NonExpandingFeatureMapSmelledFile(repo_name, file_name, calls[i + 1].line_no, calls[i].filters_value))
     return smelled_lines
 
 

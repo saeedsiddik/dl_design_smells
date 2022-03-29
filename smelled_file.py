@@ -6,7 +6,7 @@ class SmellType(Enum):
     NON_EXPANDING_FEATURE_MAP = 2
 
 
-class SmelledRepo:
+class SmelledFile:
     def __init__(self, full_name: str, file_name: str, line_no: int, smell_type: SmellType):
         self.repo_full_name = full_name
         self.smelled_file_name = file_name
