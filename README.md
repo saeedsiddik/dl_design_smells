@@ -15,6 +15,20 @@ ECE720: Machine Learning Systems Engineering Course Project 2022
 * Calls of Conv2D where Conv2D is inside another method
 * Conv2D called with variable filters value
 
+
+## Non-representative Statistics Estimation
+### Assumptions
+* Using batchnorm after dropout in DL Model
+* Function BatchNormalization() and Dropout() both are callable at least one time
+
+### What it can identify
+* Calls of BatchNormalization() and Dropout()
+* Calling sequence of both methods from AST of the corresponding Python files
+
+### When it cannot detect
+* Outside the Keras and Tensorflow 
+* BatchNormalization() and Dropout() are called as a local function under a variable 
+
 ### TODO
 * Run detector on all the code files
 * Select 10 files with the smell
@@ -22,4 +36,3 @@ ECE720: Machine Learning Systems Engineering Course Project 2022
 * Read paper to set correct values of filters for the Conv2D calls
 * Refactor the 10 files and run the projects again
 * Evaluate the performance of the model
-
