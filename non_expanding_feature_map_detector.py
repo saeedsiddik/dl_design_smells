@@ -4,6 +4,7 @@ from os import listdir
 from os.path import join
 from pprint import pprint
 
+from common import get_repo_full_name_and_repo_file_path
 from find_definition import FindDefinition
 from non_expanding_feature_map_smelled_file import NonExpandingFeatureMapSmelledFile
 from smelled_file import SmelledFile, SmellType
@@ -48,9 +49,7 @@ if __name__ == '__main__':
         path = join(directory, file)
         print(f"[{i+1}] Processing file {path}")
 
-        file_name_parts = file.split('$')
-        repo_name = "/".join([file_name_parts[0], file_name_parts[1]])
-        file_name = "\\".join(file_name_parts[2:])
+        repo_name, file_name = get_repo_full_name_and_repo_file_path(file)
 
         try:
             detected_lines = detect_non_expanding_feature_map(repo_name, file_name, path)
