@@ -15,6 +15,8 @@ ECE720: Machine Learning Systems Engineering Course Project 2022
 * Calls of Conv2D where Conv2D is inside another method
 * Conv2D called with variable filters value
 
+### Observations
+* Some variant of convolutional neural network use the non-expanding feature map as their architecture like U-Net, AlexNet, Inception
 
 ## Non-representative Statistics Estimation
 ### Assumptions
@@ -30,9 +32,6 @@ ECE720: Machine Learning Systems Engineering Course Project 2022
 * BatchNormalization() and Dropout() are called as a local function under a variable 
 
 ### TODO
-* Run detector on all the code files
-* Select 10 files with the smell
-* Clone the full repository of the 10 files and run them
-* Read paper to set correct values of filters for the Conv2D calls
+* Select 10 repositories with the smell and run them
 * Refactor the 10 files and run the projects again
 * Evaluate the performance of the model
