@@ -13,7 +13,7 @@ class Conv2DCall:
             self.filters_value = FindArgument().find(ast_node)
 
     def __str__(self):
-        return f"Conv2D({self.filters_value}, ...) at line {self.line_no}"
+        return f"({self.filters_value}, {self.line_no})"
 
     def __repr__(self):
         return self.__str__()

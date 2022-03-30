@@ -1,9 +1,11 @@
 import ast
 import csv
+import os
 from os import listdir
 from os.path import join
 from pprint import pprint
 
+from cnn_architecture_detector import is_unet
 from common import get_repo_full_name_and_repo_file_path
 from find_definition import FindDefinition
 from non_expanding_feature_map_smelled_file import NonExpandingFeatureMapSmelledFile
@@ -32,7 +34,12 @@ def detect_non_expanding_feature_map(repo_name, file_name, file_path):
     for calls in call_groups:
         for i in range(len(calls) - 1):
             if calls[i].filters_value > calls[i + 1].filters_value:
-                smelled_lines.append(NonExpandingFeatureMapSmelledFile(repo_name, file_name, calls[i + 1].line_no, calls[i].filters_value))
+                if is_unet(calls):
+                    print(
+                        f"--------------Detected U-Net model in {os.path.join(repo_name, file_name)} from line {calls[0].line_no} to {calls[-1].line_no}")
+                    break
+                else:
+                    smelled_lines.append(NonExpandingFeatureMapSmelledFile(repo_name, file_name, calls[i + 1].line_no, calls[i].filters_value))
     return smelled_lines
 
 
