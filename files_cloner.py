@@ -43,33 +43,25 @@ def save_file(url: str, filename: str, count: int):
     open(full_path, 'wb').write(r.content)
 
 
-def save_files_of_page(codes, page_index, count):
-    page_codes = codes.get_page(page_index)
-    print(f"{len(page_codes)} results in page {page_index+1}")
-
-    for code in page_codes:
-        count += 1
-        save_file(code.download_url, get_filename(code), count)
-
-    return count
+def clone_files_by_page(query, page_index):
+    try:
+        return g.search_code(query).get_page(page_index)
+    except RateLimitExceededException as e:
+        wait()
+        return clone_files_by_page(query, page_index)
 
 
 def clone_files():
-    query = "Conv2D keras in:file extension:py language:python"
-    codes = g.search_code(query)
-    print(f"Total {codes.totalCount} results found")
+    query = "Conv2D keras in:file extension:py language:python size:1201..1300"
 
     count = 0
     for page_index in range(10): # Allows to query 10 pages
-        try:
-            count = save_files_of_page(codes, page_index, count)
-            if count == codes.totalCount:
-                break
-        except RateLimitExceededException:
-            wait()
-            count = save_files_of_page(codes, page_index, count)
-            if count == codes.totalCount:
-                break
+        page_codes = clone_files_by_page(query, page_index)
+        print(f"{len(page_codes)} results in page {page_index + 1}")
+
+        for code in page_codes:
+            count += 1
+            save_file(code.download_url, get_filename(code), count)
 
 
 if __name__ == '__main__':
