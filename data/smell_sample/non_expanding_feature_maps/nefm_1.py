@@ -9,12 +9,12 @@ if __name__ == '__main__':
     model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
 
     model.add(Conv2D(512, (3, 3), activation='relu', padding='same'))
-    model.add(Conv2D(256, (3, 3), activation='relu', padding='same'))
+    model.add(layers.Conv2D(filters=256, kernel_size=(3, 3), activation='relu', padding='same'))
     model.add(Conv2D(128, (3, 3), activation='relu', padding='same'))
     # model.add(UpSampling2D((2, 2)))
     model.add(Conv2D(64, (3, 3), activation='relu', padding='same'))
     # model.add(UpSampling2D((2, 2)))
-    model.add(Conv2D(32, (3, 3), activation='relu', padding='same'))
+    model.add(Conv2D(filters=32, kernel_size=(3, 3), activation='relu', padding='same'))
     model.add(Conv2D(2, (3, 3), activation='tanh', padding='same'))
     # model.add(UpSampling2D((2, 2)))
 
