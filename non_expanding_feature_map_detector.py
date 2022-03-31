@@ -1,15 +1,13 @@
 import ast
 import csv
-import os
 from os import listdir
 from os.path import join
 from pprint import pprint
 
-from cnn_architecture_detector import is_unet
+from cnn_architecture_detector import is_specific_architecture
 from common import get_repo_full_name_and_repo_file_path
 from find_definition import FindDefinition
 from non_expanding_feature_map_smelled_file import NonExpandingFeatureMapSmelledFile
-from smelled_file import SmelledFile, SmellType
 
 
 def get_ast(file_path):
@@ -34,9 +32,7 @@ def detect_non_expanding_feature_map(repo_name, file_name, file_path):
     for calls in call_groups:
         for i in range(len(calls) - 1):
             if calls[i].filters_value > calls[i + 1].filters_value:
-                if is_unet(calls):
-                    print(
-                        f"--------------Detected U-Net model in {os.path.join(repo_name, file_name)} from line {calls[0].line_no} to {calls[-1].line_no}")
+                if is_specific_architecture(calls):
                     break
                 else:
                     smelled_lines.append(NonExpandingFeatureMapSmelledFile(repo_name, file_name, calls[i + 1].line_no, calls[i].filters_value))
@@ -77,4 +73,7 @@ if __name__ == '__main__':
         writer = csv.writer(csvfile)
         writer.writerow(["Full Name", "File Name", "Line No."])
         for repo in repo_list:
-            writer.writerow(repo.get_row())
+            try:
+                writer.writerow(repo.get_row())
+            except:
+                pass
