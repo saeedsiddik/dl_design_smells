@@ -52,16 +52,28 @@ def clone_files_by_page(query, page_index):
 
 
 def clone_files():
-    query = "Conv2D keras in:file extension:py language:python size:1201..1300"
+    size_ranges = ["1541..1580", "1581..1615", "1616..1655", "1656..1690", "1691..1725", "1726..1760", "1761..1793", "1794..1825", "1826..1855", "1856..1885", "1886..1915", "1916..1940", "1941..1973", "1974..2002", "2003..2025", "2026..2052", "2053..2073", "2074..2096", "2097..2120", "2121..2150", "2151..2175", "2176..2203", "2204..2233", "2234..2257", "2258..2280", "2281..2302", "2303..2324", "2325..2350", "2351..2380", "2381..2388", "2389..2405"]
+    # for i in range(2406, 11000, 10):
+    #     size_range = i + ".." (i+10)
+    #     print(size_range)
+    for size_range in size_ranges:
+        query = "Conv2D keras in:file extension:py language:python size:" + size_range
 
-    count = 0
-    for page_index in range(10): # Allows to query 10 pages
-        page_codes = clone_files_by_page(query, page_index)
-        print(f"{len(page_codes)} results in page {page_index + 1}")
+        print(f"Running query {query}")
+        count = 0
+        for page_index in range(10): # Allows to query 10 pages
+            page_codes = clone_files_by_page(query, page_index)
+            print(f"{len(page_codes)} results in page {page_index + 1}")
 
-        for code in page_codes:
-            count += 1
-            save_file(code.download_url, get_filename(code), count)
+            if len(page_codes) == 0:
+                break
+
+            for code in page_codes:
+                try:
+                    save_file(code.download_url, get_filename(code), count)
+                    count += 1
+                except:
+                    pass
 
 
 if __name__ == '__main__':
