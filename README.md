@@ -20,7 +20,9 @@ ECE720: Machine Learning Systems Engineering Course Project 2022
 
 ## Non-representative Statistics Estimation
 ### Assumptions
-* Using batchnorm after dropout in DL Model
+* Using batchnormalization after dropout in DL Model
+* If the batchnorm is placed after the dropout, it will compute non-representative global statistics on the dropped outputs of the
+layer.
 * Function BatchNormalization() and Dropout() both are callable at least one time
 
 ### What it can identify
