@@ -34,6 +34,10 @@ layer.
 * BatchNormalization() and Dropout() are called as a local function under a variable 
 
 ### TODO
+* Complete manual validation
+* Merge the smell detectors
+* Run the detector from command line
+  `python3 design_smells_detector.py <project_path>`
 * Select 10 repositories with the smell and run them
 * Refactor the 10 files and run the projects again
-* Evaluate the performance of the model
+* Compare the performance of the model
