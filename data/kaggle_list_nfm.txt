@@ -1,0 +1,27 @@
+https://www.kaggle.com/code/remekkinas/bacteria-image-conv2d-cv-grad-cam
+https://www.kaggle.com/code/stpeteishii/rsna-brain-tumor-dicom-conv2d
+https://www.kaggle.com/code/devm2024/keras-model-for-beginners-0-210-on-lb-eda-r-d
+https://www.kaggle.com/code/stpeteishii/arabic-character-classify-conv2d
+https://www.kaggle.com/code/kmader/inceptionv3-for-retinopathy-gpu-hr
+https://www.kaggle.com/code/automate9000/deeper-conv2d-tfds-callback-adamax-and-9975
+https://www.kaggle.com/code/shivamb/how-autoencoders-work-intro-and-usecases
+https://www.kaggle.com/code/meaninglesslives/unet-with-efficientnet-encoder-in-keras
+https://www.kaggle.com/code/cdeotte/dog-memorizer-gan
+https://www.kaggle.com/code/eswarchandt/covid-19-detection-from-lung-x-rays
+https://www.kaggle.com/code/miklgr500/linear-decay-based-on-resnet-cnn
+https://www.kaggle.com/code/kmader/attention-on-pretrained-vgg16-for-bone-age
+https://www.kaggle.com/code/madz2000/cnn-using-keras-100-accuracy
+https://www.kaggle.com/code/adinishad/driver-drowsiness-using-keras
+https://www.kaggle.com/code/shahules/indian-way-to-learn-cnn
+https://www.kaggle.com/code/ayushimishra2809/face-mask-detection
+
+
+Last layer:
+https://www.kaggle.com/code/seesee/siamese-pretrained-0-822
+https://www.kaggle.com/code/kmader/nuclei-overview-to-submission
+https://www.kaggle.com/code/martinpiotte/whale-recognition-model-with-score-0-78563
+https://www.kaggle.com/code/bulentsiyah/deep-learning-based-semantic-segmentation-keras
+
+
+Only decreasing:
+https://www.kaggle.com/code/cdeotte/supervised-generative-dog-net
