@@ -14,6 +14,7 @@ ECE720: Machine Learning Systems Engineering Course Project 2022
 ### When it cannot detect
 * Calls of Conv2D where Conv2D is inside another method
 * Conv2D called with variable filters value
+* Concatenation of models
 
 ### Observations
 * Some variant of convolutional neural network use the non-expanding feature map as their architecture like U-Net, AlexNet, Inception
