@@ -4,6 +4,10 @@ import os
 from non_expanding_feature_map_detector import detect_non_expanding_feature_map
 
 
+def detect_nse_in_project(repo_full_name, repo_path):
+    pass
+
+
 def detect_nfm_in_project(repo_full_name, repo_path):
     files = glob.glob(repo_path + '/**/*.py', recursive=True)
     for file in files:
@@ -25,7 +29,13 @@ def detect_nfm_in_project(repo_full_name, repo_path):
             continue
 
 
-if __name__ == '__main__':
+def main():
     repo_full_name = "abcsFrederick/yliu_utilities"
-    repo_path = os.path.join("data/repositories_with_smells/non_expanding_feature_maps/", repo_full_name.replace('/', '$'))
+    repo_path = os.path.join("data/repositories_with_smells/non_expanding_feature_maps/",
+                             repo_full_name.replace('/', '$'))
     detect_nfm_in_project(repo_full_name, repo_path)
+    detect_nse_in_project(repo_full_name, repo_path)
+
+
+if __name__ == '__main__':
+    main()
