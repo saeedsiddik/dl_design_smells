@@ -148,7 +148,7 @@ https://www.kaggle.com/code/kmader/nuclei-overview-to-submission
 https://www.kaggle.com/code/martinpiotte/whale-recognition-model-with-score-0-78563
 https://www.kaggle.com/code/bulentsiyah/deep-learning-based-semantic-segmentation-keras
 
-Only decreasing:
+All decreasing:
 https://www.kaggle.com/code/cdeotte/supervised-generative-dog-net
 https://www.kaggle.com/code/meaninglesslives/unet-with-efficientnet-encoder-in-keras
 https://www.kaggle.com/code/cdeotte/dog-memorizer-gan
