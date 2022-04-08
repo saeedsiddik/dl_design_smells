@@ -1,5 +1,5 @@
 Tested:
-------------------------------------------------------------------------
+1 ------------------------------------------------------------------------
 https://www.kaggle.com/code/remekkinas/bacteria-image-conv2d-cv-grad-cam
 https://www.kaggle.com/code/tajkiarahmantoma/bacteria-image-conv2d-cv-grad-cam/edit
 
@@ -30,7 +30,7 @@ Accuracy:
    FOLD: 9 - accuracy on val set:  0.9885474443435669
    FOLD: 10 - accuracy on val set:  0.9920154809951782
    OOF accuracy: 0.9696837724710266
----------------------------------------------------------------------
+2 ---------------------------------------------------------------------
 https://www.kaggle.com/code/stpeteishii/rsna-brain-tumor-dicom-conv2d
 https://www.kaggle.com/code/tajkiarahmantoma/rsna-brain-tumor-dicom-conv2d/edit
 
@@ -45,7 +45,7 @@ loss: 0.3069 - accuracy: 0.8162 - val_loss: 2.1838 - val_accuracy: 0.5122
 Modified: Conv2D[64, 128], Dense[128, 64 ,2]
 Accuracy:
 loss: 0.2695 - accuracy: 0.8341 - val_loss: 2.7215 - val_accuracy: 0.5147
-----------------------------------------------------------------------------------
+3 ----------------------------------------------------------------------------------
 https://www.kaggle.com/code/devm2024/keras-model-for-beginners-0-210-on-lb-eda-r-d
 https://www.kaggle.com/code/tajkiarahmantoma/keras-model-for-beginners-0-210-on-lb-eda-r-d/edit
 
@@ -60,7 +60,13 @@ Accuracy:
 loss: 0.3789 - accuracy: 0.8163 - val_loss: 0.3319 - val_accuracy: 0.8554
 Test loss: 0.3268152177333832
 Test accuracy: 0.8728179335594177
-------------------------------------------------------------------------
+
+Modified: Conv2D[64, 128, 128, 256], Dense[512, 256, 1]
+Accuracy:
+loss: 0.2688 - accuracy: 0.8720 - val_loss: 0.3338 - val_accuracy: 0.8504
+Test loss: 0.29222536087036133
+Test accuracy: 0.885286808013916
+4 ------------------------------------------------------------------------
 https://www.kaggle.com/code/stpeteishii/arabic-character-classify-conv2d
 https://www.kaggle.com/code/tajkiarahmantoma/arabic-character-classify-conv2d/edit
 
@@ -73,7 +79,7 @@ Modified: Conv2D[128, 256], Dense[128, 64, 28]
 Accuracy:
 loss: 0.0106 - accuracy: 0.9973 - val_loss: 1.0119 - val_accuracy: 0.8480
 test accuracy: 0.8615659422447157
----------------------------------------------------------------------------
+5 ---------------------------------------------------------------------------
 https://www.kaggle.com/code/eswarchandt/covid-19-detection-from-lung-x-rays
 https://www.kaggle.com/code/tajkiarahmantoma/covid-19-detection-from-lung-x-rays/edit
 
@@ -84,7 +90,7 @@ loss: 0.0065 - accuracy: 1.0000 - val_loss: 6.8793e-04 - val_accuracy: 0.9565
 Modified: Conv2D[32, 32, 64, 64, 128, 256, 256] Dense[32, 1]
 Accuracy:
 loss: 0.0024 - accuracy: 1.0000 - val_loss: 1.8928e-04 - val_accuracy: 1.0000
------------------------------------------------------------------
+6 -----------------------------------------------------------------
 https://www.kaggle.com/code/madz2000/cnn-using-keras-100-accuracy
 https://www.kaggle.com/code/tajkiarahmantoma/cnn-using-keras-100-accuracy/edit
 
@@ -95,7 +101,7 @@ loss: 0.0032 - accuracy: 0.9991 - val_loss: 5.1829e-04 - val_accuracy: 1.0000
 Modified: Conv2D[75, 128, 256] Dense[512, 24]
 Accuracy:
 loss: 7.8610e-04 - accuracy: 0.9997 - val_loss: 1.7879e-05 - val_accuracy: 1.0000
--------------------------------------------------------------------
+7 -------------------------------------------------------------------
 https://www.kaggle.com/code/adinishad/driver-drowsiness-using-keras
 https://www.kaggle.com/code/tajkiarahmantoma/driver-drowsiness-using-keras/edit
 
@@ -106,7 +112,7 @@ loss: 0.1015 - accuracy: 0.9607 - val_loss: 0.0909 - val_accuracy: 0.9619
 Modified: Conv2D[32, 64, 128, 256] Dense[64, 4]
 Accuracy:
 loss: 0.0675 - accuracy: 0.9710 - val_loss: 0.0919 - val_accuracy: 0.9723
-------------------------------------------------------------
+8 ------------------------------------------------------------
 https://www.kaggle.com/code/shahules/indian-way-to-learn-cnn
 https://www.kaggle.com/code/tajkiarahmantoma/indian-way-to-learn-cnn/edit
 
@@ -117,7 +123,7 @@ loss: 0.0390 - accuracy: 0.9883 - val_loss: 0.0251 - val_accuracy: 0.9932
 Modified: Conv2D[32, 32, 64, 64, 128, 128] Dense[256, 10]
 Accuracy:
 loss: 0.0442 - accuracy: 0.9879 - val_loss: 0.0206 - val_accuracy: 0.9946
-----------------------------------------------------------------
+9 ----------------------------------------------------------------
 https://www.kaggle.com/code/ayushimishra2809/face-mask-detection
 https://www.kaggle.com/code/tajkiarahmantoma/face-mask-detection/edit
 
@@ -132,21 +138,34 @@ loss: 0.0528 - accuracy: 0.9816
 Modified: Conv2D[100, 128] Dense[50, 2]
 Accuracy:
 loss: 0.0538 - accuracy: 0.9798
-
-List:
-https://www.kaggle.com/code/kmader/inceptionv3-for-retinopathy-gpu-hr
-https://www.kaggle.com/code/shivamb/how-autoencoders-work-intro-and-usecases
-https://www.kaggle.com/code/miklgr500/linear-decay-based-on-resnet-cnn
-https://www.kaggle.com/code/kmader/attention-on-pretrained-vgg16-for-bone-age
-
-All same:
+10 ---------------------------------------------------------------------
 https://www.kaggle.com/code/automate9000/deeper-conv2d-tfds-callback-adamax-and-9975
+https://www.kaggle.com/code/tajkiarahmantoma/deeper-conv2d-tfds-callback-adamax-and-9975/edit
+
+Original: Conv2D[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20] Dense[200, 10]
+Accuracy:
+loss: 0.0100 - accuracy: 0.9977
+
+Modified: Conv2D[16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512] Dense[200, 10]
+Accuracy:
+loss: 0.0186 - accuracy: 0.9978
+----------------------------------------------------------------------------
+List:
+https://www.kaggle.com/code/shivamb/how-autoencoders-work-intro-and-usecases (All conv layer)
+https://www.kaggle.com/code/miklgr500/linear-decay-based-on-resnet-cnn
+
+Attention model:
+https://www.kaggle.com/code/kmader/inceptionv3-for-retinopathy-gpu-hr
+https://www.kaggle.com/code/kmader/attention-on-pretrained-vgg16-for-bone-age
 
 Last layer:
 https://www.kaggle.com/code/seesee/siamese-pretrained-0-822
 https://www.kaggle.com/code/kmader/nuclei-overview-to-submission
 https://www.kaggle.com/code/martinpiotte/whale-recognition-model-with-score-0-78563
 https://www.kaggle.com/code/bulentsiyah/deep-learning-based-semantic-segmentation-keras
+
+All same:
+https://www.kaggle.com/code/automate9000/deeper-conv2d-tfds-callback-adamax-and-9975
 
 All decreasing:
 https://www.kaggle.com/code/cdeotte/supervised-generative-dog-net
