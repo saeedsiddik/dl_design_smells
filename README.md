@@ -34,11 +34,15 @@ layer.
 * Outside the Keras and Tensorflow 
 * BatchNormalization() and Dropout() are called as a local function under a variable 
 
-### TODO
+### Done
 * Complete manual validation
 * Merge the smell detectors
-* Run the detector from command line
-  `python3 design_smells_detector.py <project_path>`
 * Select 10 repositories with the smell and run them
 * Refactor the 10 files and run the projects again
 * Compare the performance of the model
+
+### Command 
+* Run the detector from command line
+  `python3 design_smells_detector.py <design_smell> <project_path>`
+* Here `<design_smell>` denotes the code `nrse` or `nfm`
+* `<project_path>` denotes the target project directory 
