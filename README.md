@@ -1,8 +1,7 @@
 # Deep Learning Design Smells Detection
+This tool is the output of the project of the course ECE720: Machine Learning Systems Engineering (Winter 2022). This tool currently detects two design smells in deep learning programs.  
 
-ECE720: Machine Learning Systems Engineering Course Project 2022
-
-### How to run
+## How to run
 Run the detector from command line
   ```python3 design_smells_detector.py <design_smell> <project_path>```
 
