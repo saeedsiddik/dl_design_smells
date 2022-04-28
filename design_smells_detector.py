@@ -1,11 +1,18 @@
 import glob
-import os
+import os, sys
 
 from non_expanding_feature_map_detector import detect_non_expanding_feature_map
+from non_representative_statistics_estimation_detection import *
 
 
-def detect_nse_in_project(repo_full_name, repo_path):
-    pass
+def detect_nrse_in_project(repo_full_name, repo_path):
+    df_nrse_info = NRSE_detection(repo_path)
+    print("Non Representative Statistical Estimation Found", len(df_nrse_info.index))
+    print("Project Containing Non Representative Statistical Estimation", df_nrse_info['Filename'].nunique())
+
+    print (df_nrse_info)
+
+    df_nrse_info.to_csv("NRSE_detect.csv", encoding='utf-8', index=False)
 
 
 def detect_nfm_in_project(repo_full_name, repo_path):
@@ -30,11 +37,21 @@ def detect_nfm_in_project(repo_full_name, repo_path):
 
 
 def main():
-    repo_full_name = "abcsFrederick/yliu_utilities"
-    repo_path = os.path.join("data/repositories_with_smells/non_expanding_feature_maps/",
-                             repo_full_name.replace('/', '$'))
-    detect_nfm_in_project(repo_full_name, repo_path)
-    detect_nse_in_project(repo_full_name, repo_path)
+    args = sys.argv[1:]
+    if ( len(args) < 2 ):
+        print ("Please follow the argument style. E.g. python3 design_smells_detector.py <smell_code> <project_path>")
+
+    else:
+        if(args[0] == 'nfm'):
+            repo_full_name = "abcsFrederick/yliu_utilities"
+            repo_path = os.path.join("data/repositories_with_smells/non_expanding_feature_maps/",
+                                     repo_full_name.replace('/', '$'))
+            detect_nfm_in_project(repo_full_name, repo_path)
+    
+    
+        elif (args[0] == 'nrse'):
+            print ("Working for NRSE Design Smell on Project Path: ", args[1])
+            detect_nrse_in_project("", args[1])
 
 
 if __name__ == '__main__':
