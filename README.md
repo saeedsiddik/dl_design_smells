@@ -8,7 +8,7 @@ Run the detector from command line
 Here, 
 * `<design_smell>` denotes a code name for the design smells. Currently, the supported values are `nrse` and `nfm` where `nrse` is the code for Non-representative Statistics Estimation and `nfm` is the code for Non-expanding Feature Map.  
 * `<project_path>` denotes the path of the project. All the files under this path will be considered for the design smells detection.
-* Example ```python3 design_smells_detector.py nrse data/repositories_with_smells/nrse/```
+* Example ```python design_smells_detector.py nfm data\smell_sample```
 
 ## Non-expanding Feature Map
 ### Assumptions
