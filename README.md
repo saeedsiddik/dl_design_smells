@@ -2,14 +2,19 @@
 
 ECE720: Machine Learning Systems Engineering Course Project 2022
 
-## Non-expanding feature map
+### How to run
+Run the detector from command line
+  ```python3 design_smells_detector.py <design_smell> <project_path>```
+
+Here, 
+* `<design_smell>` denotes a code name for the design smells. Currently, the supported values are `nrse` and `nfm` where `nrse` is the code for Non-representative Statistics Estimation and `nfm` is the code for Non-expanding Feature Map.  
+* `<project_path>` denotes the path of the project. All the files under this path will be considered for the design smells detection.
+* Example ```python3 design_smells_detector.py nrse data/repositories_with_smells/nrse/```
+
+## Non-expanding Feature Map
 ### Assumptions
 * Conv2D is called with constant filters like Conv2D(32, ...) or Conv2D(filters=32, ...)
 * All the calls of Conv2D in a scope/method are part of same model
-
-### What it can identify
-* Calls of Conv2D
-* Values of filters in argument of Conv2D either in a form of constant value or as a keyword argument
 
 ### When it cannot detect
 * Calls of Conv2D where Conv2D is inside another method
@@ -26,23 +31,6 @@ ECE720: Machine Learning Systems Engineering Course Project 2022
 layer.
 * Function BatchNormalization() and Dropout() both are callable at least one time
 
-### What it can identify
-* Calls of BatchNormalization() and Dropout()
-* Calling sequence of both methods from AST of the corresponding Python files
-
 ### When it cannot detect
 * Outside the Keras and Tensorflow 
-* BatchNormalization() and Dropout() are called as a local function under a variable 
-
-### Done
-* Complete manual validation
-* Merge the smell detectors
-* Select 10 repositories with the smell and run them
-* Refactor the 10 files and run the projects again
-* Compare the performance of the model
-
-### Command 
-* Run the detector from command line
-  `python3 design_smells_detector.py <design_smell> <project_path>`
-* Here `<design_smell>` denotes the code `nrse` or `nfm`
-* `<project_path>` denotes the target project directory 
+* BatchNormalization() and Dropout() are called as a local function under a variable
