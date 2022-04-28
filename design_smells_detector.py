@@ -38,21 +38,22 @@ def detect_nfm_in_project(repo_full_name, repo_path):
 
 def main():
     args = sys.argv[1:]
-    if ( len(args) < 2 ):
-        print ("Please follow the argument style. E.g. python3 design_smells_detector.py <smell_code> <project_path>")
 
-    else:
-        if(args[0] == 'nfm'):
-            repo_full_name = "abcsFrederick/yliu_utilities"
-            repo_path = os.path.join("data/repositories_with_smells/non_expanding_feature_maps/",
-                                     repo_full_name.replace('/', '$'))
-            detect_nfm_in_project(repo_full_name, repo_path)
-    
-    
-        elif (args[0] == 'nrse'):
-            print ("Working for NRSE Design Smell on Project Path: ", args[1])
-            detect_nrse_in_project("", args[1])
+    if len(args) < 2:
+        print("Please follow the argument style e.g. python3 design_smells_detector.py <smell_code> <project_path>")
+        return
+
+    code = args[0]
+    repo_path = args[1]
+
+    if code == 'nfm':
+        print("Working for the detection of NFM in project: ", repo_path)
+        detect_nfm_in_project("", repo_path)
+
+
+    elif code == 'nrse':
+        print("Working for NRSE Design Smell on Project Path: ", repo_path)
+        detect_nrse_in_project("", repo_path)
 
 
 if __name__ == '__main__':
-    main()
